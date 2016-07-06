@@ -11,7 +11,7 @@ namespace WindowsFormApplication1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
-	
+
 	/// <summary>
 	/// Summary for Form1
 	/// </summary>
@@ -469,21 +469,9 @@ namespace WindowsFormApplication1 {
 
 	}
 
-
-
-
-	private: System::Void autorToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-		MessageBox::Show("Autor: Piotr Szultka \nMatematyka sem. 6 \nnr indeksu: 150 557");
-	}
-	private: System::Void uruchomPonownieToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-		Application::Restart();
-	}
-	private: System::Void zamknijToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
-		Application::Exit();
-	}
 	private: System::Void zapiszDane_Click(System::Object^  sender, System::EventArgs^  e) {
 		using namespace std;
-		
+
 		fstream dane;
 		try {
 			dane.open("zapisaneDane.txt", ios::out);
@@ -500,9 +488,21 @@ namespace WindowsFormApplication1 {
 			MessageBox::Show(ex->ToString(), "Brak wartości.");
 		}
 	}
-private: System::Void równanieToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show("Równanie Van der Pol'a ma postać \nx'' - a*(1-x^2)*x' + x = 0 \ngdzie: \na - współczynnik tłumienia.");
-}
-};
+
+
+	private: System::Void równanieToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		MessageBox::Show("Równanie Van der Pol'a ma postać \nx'' - a*(1-x^2)*x' + x = 0 \ngdzie: \na - współczynnik tłumienia.");
+	}
+	private: System::Void autorToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		MessageBox::Show("Autor: Piotr Szultka \nMatematyka sem. 6 \nnr indeksu: 150 557");
+	}
+	private: System::Void uruchomPonownieToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		Application::Restart();
+	}
+	private: System::Void zamknijToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+		Application::Exit();
+	}
+
+	};
 }
 
