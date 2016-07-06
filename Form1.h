@@ -437,8 +437,7 @@ namespace WindowsFormApplication1 {
 				y[0] = Double::Parse(PodaneY0->Text);
 				mi = Double::Parse(PodaneMi->Text);
 				h = Double::Parse(PodaneH->Text);
-				int n;
-				for (n = 0; n < 1500; n++) {
+				for (int n = 0; n < 1500; n++) {
 					k1 = y[n];
 					m1 = (-x[n]) + mi*(1 - pow(x[n], 2))*y[n];
 					k2 = y[n] + h*m1 / 2;
