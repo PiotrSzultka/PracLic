@@ -131,9 +131,9 @@ namespace WindowsFormApplication1 {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(25, 23);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(298, 34);
+			this->label1->Size = System::Drawing::Size(288, 34);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Równanie Van der Pol\'a";
+			this->label1->Text = L"Równanie van der Pola";
 			// 
 			// label3
 			// 
