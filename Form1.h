@@ -112,12 +112,12 @@ namespace WindowsFormApplication1 {
 			this->y = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->programToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->równanieToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->autorToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zamknijToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->uruchomPonownieToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zamknijToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zapiszDane = (gcnew System::Windows::Forms::Button());
-			this->równanieToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaWartosci))->BeginInit();
@@ -326,10 +326,17 @@ namespace WindowsFormApplication1 {
 			this->programToolStripMenuItem->Size = System::Drawing::Size(65, 20);
 			this->programToolStripMenuItem->Text = L"Program";
 			// 
+			// równanieToolStripMenuItem
+			// 
+			this->równanieToolStripMenuItem->Name = L"równanieToolStripMenuItem";
+			this->równanieToolStripMenuItem->Size = System::Drawing::Size(126, 22);
+			this->równanieToolStripMenuItem->Text = L"Równanie";
+			this->równanieToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::równanieToolStripMenuItem_Click);
+			// 
 			// autorToolStripMenuItem
 			// 
 			this->autorToolStripMenuItem->Name = L"autorToolStripMenuItem";
-			this->autorToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->autorToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->autorToolStripMenuItem->Text = L"Autor";
 			this->autorToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::autorToolStripMenuItem_Click);
 			// 
@@ -340,7 +347,7 @@ namespace WindowsFormApplication1 {
 					this->zamknijToolStripMenuItem1
 			});
 			this->zamknijToolStripMenuItem->Name = L"zamknijToolStripMenuItem";
-			this->zamknijToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->zamknijToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->zamknijToolStripMenuItem->Text = L"Zasilanie";
 			// 
 			// uruchomPonownieToolStripMenuItem
@@ -367,13 +374,6 @@ namespace WindowsFormApplication1 {
 			this->zapiszDane->UseVisualStyleBackColor = true;
 			this->zapiszDane->Click += gcnew System::EventHandler(this, &Form1::zapiszDane_Click);
 			// 
-			// równanieToolStripMenuItem
-			// 
-			this->równanieToolStripMenuItem->Name = L"równanieToolStripMenuItem";
-			this->równanieToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->równanieToolStripMenuItem->Text = L"Równanie";
-			this->równanieToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::równanieToolStripMenuItem_Click);
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -398,7 +398,7 @@ namespace WindowsFormApplication1 {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"VanDerPol";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaWartosci))->EndInit();
@@ -411,12 +411,12 @@ namespace WindowsFormApplication1 {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->chart1->Series->Clear();
+		this->chart2->Series->Clear();
+		this->tabelaWartosci->Rows->Clear();
 		this->chart1->Series->Add("cykl");
 		chart1->Series["cykl"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-		this->chart2->Series->Clear();
 		this->chart2->Series->Add("zwykly");
 		chart2->Series["zwykly"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-		this->tabelaWartosci->Rows->Clear();
 		this->label3->Text = "";
 
 		double k1, k2, k3, k4;
