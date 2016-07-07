@@ -491,7 +491,7 @@ namespace WindowsFormApplication1 {
 
 
 	private: System::Void równanieToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-		MessageBox::Show("Równanie Van der Pol'a ma postać \nx'' - a*(1-x^2)*x' + x = 0 \ngdzie: \na - współczynnik tłumienia.");
+		MessageBox::Show("Równanie van der Pola ma postać \nx'' - a*(1-x^2)*x' + x = 0 \ngdzie: \na - współczynnik tłumienia.");
 	}
 	private: System::Void autorToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		MessageBox::Show("Autor: Piotr Szultka \nMatematyka sem. 6 \nnr indeksu: 150 557");
