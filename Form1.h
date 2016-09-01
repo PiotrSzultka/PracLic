@@ -456,7 +456,7 @@ namespace WindowsFormApplication1 {
 					this->tabelaWartosci->Rows[n]->Cells[2]->Value = y[n];
 
 					this->chart1->Series["cykl"]->Points->AddXY(x[n], y[n]);
-					this->chart2->Series["zwykly"]->Points->AddY(y[n]);
+					this->chart2->Series["zwykly"]->Points->AddY(x[n]);
 				}
 
 			}
